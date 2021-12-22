@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows10.0.22000.0</TargetFramework>
+    <RootNamespace>Kosten__und_Nutzenanalyse_Aktienhandel</RootNamespace>
+    <UseWindowsForms>true</UseWindowsForms>
+    <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiveCharts" Version="0.9.7" />
+    <PackageReference Include="LiveChartsCore.SkiaSharpView.WinForms" Version="2.0.0-beta.90" />
+  </ItemGroup>
+
+</Project>
