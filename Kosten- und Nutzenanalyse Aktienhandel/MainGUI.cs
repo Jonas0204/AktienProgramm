@@ -113,30 +113,31 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel.Forms
                 {
                     HttpClient client = new();
 
-                    double t;
-                    double version = Convert.ToDouble(Assembly.GetExecutingAssembly().GetName().Version.ToString());
+                    Version currentversion = Assembly.GetExecutingAssembly().GetName().Version;
+                    Version serverversion;
                     string url = "http://jonas-prog.bplaced.net/updates/programms/versions/version_Aktien.txt";
 
                     using (HttpResponseMessage response = await client.GetAsync(url))
                     {
                         using HttpContent content = response.Content;
-                        t = Convert.ToDouble(content.ReadAsStringAsync().Result);
+                        serverversion = Version.Parse(content.ReadAsStringAsync().Result);
                     }
 
-                    if (t == version)
+                    switch (currentversion.CompareTo(serverversion))
                     {
-                        //MessageBox.Show("Kein Update verfügbar!");
-                    }
-                    else if (t > version)
-                    {
-                        if (MessageBox.Show("Es ist ein neues Update verfügbar!" + Environment.NewLine + "Möchten sie das Update installieren?", "Update Installieren", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                        {
-                            string pid = Convert.ToString(Environment.ProcessId.ToString());
-                            string filedownload = "http://jonas-prog.bplaced.net/updates/programms/";
-                            string path = Environment.CurrentDirectory;
-                            string filename = Process.GetProcessById(Convert.ToInt32(pid)).ProcessName + ".exe";
-                            Process.Start(path + "\\Updater.exe", "\"" + path + "\"" + " " + "\"" + filename + "\"" + " " + "\"" + pid + "\"" + " " + "\"" + filedownload + "\"");
-                        }
+                        case 0:
+                            break;
+                        case 1:
+                            break;
+                        case -1:
+                            if (MessageBox.Show("Es ist ein neues Update verfügbar!" + Environment.NewLine + "Möchten sie das Update installieren?", "Update Installieren", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                string pid = Convert.ToString(Environment.ProcessId.ToString());
+                                string filedownload = "http://jonas-prog.bplaced.net/updates/programms/";
+                                string path = Environment.CurrentDirectory;
+                                string filename = Process.GetProcessById(Convert.ToInt32(pid)).ProcessName + ".exe";
+                                Process.Start(path + "\\Updater.exe", "\"" + path + "\"" + " " + "\"" + filename + "\"" + " " + "\"" + pid + "\"" + " " + "\"" + filedownload + "\"");
+                            }break;
                     }
                 }
 
