@@ -7,13 +7,14 @@ using System.Globalization;
 using System.IO;
 using System.Net.Http;
 using System.Net.NetworkInformation;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace Kosten__und_Nutzenanalyse_Aktienhandel
 {
-    public partial class Form1 : Form
+    public partial class FormDashboard : Form
     {
-        public Form1()
+        public FormDashboard()
         {
             InitializeComponent();
         }
@@ -26,24 +27,7 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
         public Pool Pool;
 
         private void Form1_Load(object sender, EventArgs e)
-        {
-            //Updater
-            string ExePath = Directory.GetCurrentDirectory();
-            try
-            {            
-                StreamReader sr = new(ExePath + "\\version.txt");
-                versionLbl.Text = sr.ReadToEnd();
-                sr.Close();
-            }
-            catch (Exception)
-            {
-                if (!File.Exists(ExePath + "\\version.txt"))
-                {
-                    StreamWriter sw = new(ExePath + "\\version.txt");
-                    sw.Write(versionLbl.Text);
-                    sw.Close();
-                }
-            }
+        {            
             /*
             Chart chart = new Chart();
             chart.Location = new System.Drawing.Point(10,10);
@@ -94,55 +78,12 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             }
 
             table.Clear();
-
-            Updater();
-
+                        
             Pool = new();
             Pool.Aktien = new();
         }
 
-        private async void Updater()
-        {            
-            try
-            {
-                bool con = NetworkInterface.GetIsNetworkAvailable();                
-                if (con == true)
-                {
-                    HttpClient client = new();  
-                    
-                    double t;
-                    double version = Convert.ToDouble(versionLbl.Text);
-                    string url = "http://jonas-prog.bplaced.net/updates/programms/versions/version_Aktien.txt";
-
-                    using (HttpResponseMessage response = await client.GetAsync(url))
-                    {
-                        using HttpContent content = response.Content;                        
-                        t = Convert.ToDouble(content.ReadAsStringAsync().Result);
-                    }                    
-                                       
-                    if (t == version)
-                    {
-                        //MessageBox.Show("Kein Update verfügbar!");
-                    }
-                    else if (t > version)
-                    {
-                        if (MessageBox.Show("Es ist ein neues Update verfügbar!" + Environment.NewLine + "Möchten sie das Update installieren?", "Update Installieren", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                        {
-                            string pid = Convert.ToString(Environment.ProcessId.ToString());
-                            string filedownload = "http://jonas-prog.bplaced.net/updates/programms/";
-                            string path = Environment.CurrentDirectory;
-                            string filename = Process.GetProcessById(Convert.ToInt32(pid)).ProcessName + ".exe";
-                            Process.Start(path + "\\Updater.exe", "\"" + path + "\"" + " " + "\"" + filename + "\"" + " " + "\"" + pid + "\"" + " " + "\"" + filedownload + "\"");
-                        }
-                    }
-                }
-
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(Convert.ToString(e));
-            }
-        }
+        
 
         protected void AddToTabel(List<Aktie> aktien)
         {

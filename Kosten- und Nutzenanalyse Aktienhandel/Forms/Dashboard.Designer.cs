@@ -1,7 +1,7 @@
 ﻿
 namespace Kosten__und_Nutzenanalyse_Aktienhandel
 {
-    partial class Form1
+    partial class FormDashboard
     {
         /// <summary>
         ///  Required designer variable.
@@ -51,8 +51,6 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             this.TitelCb = new System.Windows.Forms.ComboBox();
             this.AnzahlAktienTb = new System.Windows.Forms.TextBox();
             this.AnzahlAktienLbl = new System.Windows.Forms.Label();
-            this.versionLbl = new System.Windows.Forms.Label();
-            this.TextVersionlbl = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.AnsichtGB = new System.Windows.Forms.GroupBox();
             this.GsmKoLbl2 = new System.Windows.Forms.Label();
@@ -78,8 +76,9 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             // dgv
             // 
             this.dgv.AllowUserToAddRows = false;
+            this.dgv.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(12, 12);
+            this.dgv.Location = new System.Drawing.Point(1, 1);
             this.dgv.Name = "dgv";
             this.dgv.RowTemplate.Height = 25;
             this.dgv.Size = new System.Drawing.Size(776, 344);
@@ -92,15 +91,17 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             // 
             // DatumTb
             // 
-            this.DatumTb.Location = new System.Drawing.Point(12, 414);
+            this.DatumTb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DatumTb.Location = new System.Drawing.Point(1, 412);
             this.DatumTb.Name = "DatumTb";
             this.DatumTb.Size = new System.Drawing.Size(100, 23);
             this.DatumTb.TabIndex = 1;
             // 
             // DatumLbl
             // 
+            this.DatumLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DatumLbl.AutoSize = true;
-            this.DatumLbl.Location = new System.Drawing.Point(12, 393);
+            this.DatumLbl.Location = new System.Drawing.Point(1, 391);
             this.DatumLbl.Name = "DatumLbl";
             this.DatumLbl.Size = new System.Drawing.Size(46, 15);
             this.DatumLbl.TabIndex = 2;
@@ -108,8 +109,9 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             // 
             // TitelLbl
             // 
+            this.TitelLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TitelLbl.AutoSize = true;
-            this.TitelLbl.Location = new System.Drawing.Point(118, 396);
+            this.TitelLbl.Location = new System.Drawing.Point(107, 394);
             this.TitelLbl.Name = "TitelLbl";
             this.TitelLbl.Size = new System.Drawing.Size(32, 15);
             this.TitelLbl.TabIndex = 4;
@@ -117,8 +119,9 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             // 
             // AktionLbl
             // 
+            this.AktionLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AktionLbl.AutoSize = true;
-            this.AktionLbl.Location = new System.Drawing.Point(224, 396);
+            this.AktionLbl.Location = new System.Drawing.Point(213, 394);
             this.AktionLbl.Name = "AktionLbl";
             this.AktionLbl.Size = new System.Drawing.Size(45, 15);
             this.AktionLbl.TabIndex = 7;
@@ -126,15 +129,17 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             // 
             // KostenTb
             // 
-            this.KostenTb.Location = new System.Drawing.Point(296, 414);
+            this.KostenTb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.KostenTb.Location = new System.Drawing.Point(285, 412);
             this.KostenTb.Name = "KostenTb";
             this.KostenTb.Size = new System.Drawing.Size(100, 23);
             this.KostenTb.TabIndex = 8;
             // 
             // KostenLbl
             // 
+            this.KostenLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.KostenLbl.AutoSize = true;
-            this.KostenLbl.Location = new System.Drawing.Point(296, 396);
+            this.KostenLbl.Location = new System.Drawing.Point(285, 394);
             this.KostenLbl.Name = "KostenLbl";
             this.KostenLbl.Size = new System.Drawing.Size(46, 15);
             this.KostenLbl.TabIndex = 9;
@@ -142,15 +147,17 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             // 
             // KursTb
             // 
-            this.KursTb.Location = new System.Drawing.Point(402, 414);
+            this.KursTb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.KursTb.Location = new System.Drawing.Point(391, 412);
             this.KursTb.Name = "KursTb";
             this.KursTb.Size = new System.Drawing.Size(100, 23);
             this.KursTb.TabIndex = 10;
             // 
             // KursLbl
             // 
+            this.KursLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.KursLbl.AutoSize = true;
-            this.KursLbl.Location = new System.Drawing.Point(402, 396);
+            this.KursLbl.Location = new System.Drawing.Point(391, 394);
             this.KursLbl.Name = "KursLbl";
             this.KursLbl.Size = new System.Drawing.Size(33, 15);
             this.KursLbl.TabIndex = 11;
@@ -158,7 +165,8 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             // 
             // SpeicherBtn
             // 
-            this.SpeicherBtn.Location = new System.Drawing.Point(633, 414);
+            this.SpeicherBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SpeicherBtn.Location = new System.Drawing.Point(622, 412);
             this.SpeicherBtn.Name = "SpeicherBtn";
             this.SpeicherBtn.Size = new System.Drawing.Size(155, 44);
             this.SpeicherBtn.TabIndex = 14;
@@ -168,8 +176,9 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             // 
             // CopyrightLbl
             // 
+            this.CopyrightLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CopyrightLbl.AutoSize = true;
-            this.CopyrightLbl.Location = new System.Drawing.Point(12, 586);
+            this.CopyrightLbl.Location = new System.Drawing.Point(13, 551);
             this.CopyrightLbl.Name = "CopyrightLbl";
             this.CopyrightLbl.Size = new System.Drawing.Size(126, 15);
             this.CopyrightLbl.TabIndex = 21;
@@ -177,7 +186,8 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             // 
             // TabelleSpeichernBtn
             // 
-            this.TabelleSpeichernBtn.Location = new System.Drawing.Point(894, 48);
+            this.TabelleSpeichernBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TabelleSpeichernBtn.Location = new System.Drawing.Point(793, 8);
             this.TabelleSpeichernBtn.Name = "TabelleSpeichernBtn";
             this.TabelleSpeichernBtn.Size = new System.Drawing.Size(111, 59);
             this.TabelleSpeichernBtn.TabIndex = 22;
@@ -187,7 +197,8 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             // 
             // TabelleÖffnenBtn
             // 
-            this.TabelleÖffnenBtn.Location = new System.Drawing.Point(1037, 48);
+            this.TabelleÖffnenBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TabelleÖffnenBtn.Location = new System.Drawing.Point(936, 8);
             this.TabelleÖffnenBtn.Name = "TabelleÖffnenBtn";
             this.TabelleÖffnenBtn.Size = new System.Drawing.Size(111, 59);
             this.TabelleÖffnenBtn.TabIndex = 23;
@@ -197,7 +208,8 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             // 
             // DelTabelleBtn
             // 
-            this.DelTabelleBtn.Location = new System.Drawing.Point(894, 573);
+            this.DelTabelleBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DelTabelleBtn.Location = new System.Drawing.Point(793, 538);
             this.DelTabelleBtn.Name = "DelTabelleBtn";
             this.DelTabelleBtn.Size = new System.Drawing.Size(254, 28);
             this.DelTabelleBtn.TabIndex = 25;
@@ -207,7 +219,8 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             // 
             // DelRowBtn
             // 
-            this.DelRowBtn.Location = new System.Drawing.Point(894, 520);
+            this.DelRowBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DelRowBtn.Location = new System.Drawing.Point(793, 485);
             this.DelRowBtn.Name = "DelRowBtn";
             this.DelRowBtn.Size = new System.Drawing.Size(254, 47);
             this.DelRowBtn.TabIndex = 24;
@@ -217,8 +230,9 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             // 
             // KaufCb
             // 
+            this.KaufCb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.KaufCb.AutoSize = true;
-            this.KaufCb.Location = new System.Drawing.Point(224, 414);
+            this.KaufCb.Location = new System.Drawing.Point(213, 412);
             this.KaufCb.Name = "KaufCb";
             this.KaufCb.Size = new System.Drawing.Size(50, 19);
             this.KaufCb.TabIndex = 5;
@@ -229,8 +243,9 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             // 
             // VerkaufCb
             // 
+            this.VerkaufCb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.VerkaufCb.AutoSize = true;
-            this.VerkaufCb.Location = new System.Drawing.Point(224, 439);
+            this.VerkaufCb.Location = new System.Drawing.Point(213, 437);
             this.VerkaufCb.Name = "VerkaufCb";
             this.VerkaufCb.Size = new System.Drawing.Size(65, 19);
             this.VerkaufCb.TabIndex = 6;
@@ -241,51 +256,37 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             // 
             // TitelCb
             // 
+            this.TitelCb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TitelCb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.TitelCb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.TitelCb.FormattingEnabled = true;
-            this.TitelCb.Location = new System.Drawing.Point(118, 414);
+            this.TitelCb.Location = new System.Drawing.Point(107, 412);
             this.TitelCb.Name = "TitelCb";
             this.TitelCb.Size = new System.Drawing.Size(100, 23);
             this.TitelCb.TabIndex = 3;
             // 
             // AnzahlAktienTb
             // 
-            this.AnzahlAktienTb.Location = new System.Drawing.Point(508, 414);
+            this.AnzahlAktienTb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AnzahlAktienTb.Location = new System.Drawing.Point(497, 412);
             this.AnzahlAktienTb.Name = "AnzahlAktienTb";
             this.AnzahlAktienTb.Size = new System.Drawing.Size(119, 23);
             this.AnzahlAktienTb.TabIndex = 12;
             // 
             // AnzahlAktienLbl
             // 
+            this.AnzahlAktienLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AnzahlAktienLbl.AutoSize = true;
-            this.AnzahlAktienLbl.Location = new System.Drawing.Point(508, 396);
+            this.AnzahlAktienLbl.Location = new System.Drawing.Point(497, 394);
             this.AnzahlAktienLbl.Name = "AnzahlAktienLbl";
             this.AnzahlAktienLbl.Size = new System.Drawing.Size(103, 15);
             this.AnzahlAktienLbl.TabIndex = 13;
             this.AnzahlAktienLbl.Text = "Anzahl der Aktien:";
             // 
-            // versionLbl
-            // 
-            this.versionLbl.AutoSize = true;
-            this.versionLbl.Location = new System.Drawing.Point(1241, 586);
-            this.versionLbl.Name = "versionLbl";
-            this.versionLbl.Size = new System.Drawing.Size(28, 15);
-            this.versionLbl.TabIndex = 31;
-            this.versionLbl.Text = "1.01";
-            // 
-            // TextVersionlbl
-            // 
-            this.TextVersionlbl.AutoSize = true;
-            this.TextVersionlbl.Location = new System.Drawing.Point(1181, 586);
-            this.TextVersionlbl.Name = "TextVersionlbl";
-            this.TextVersionlbl.Size = new System.Drawing.Size(54, 15);
-            this.TextVersionlbl.TabIndex = 32;
-            this.TextVersionlbl.Text = "Version:  ";
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(713, 577);
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.Location = new System.Drawing.Point(639, 538);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 33;
@@ -295,6 +296,7 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             // 
             // AnsichtGB
             // 
+            this.AnsichtGB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AnsichtGB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.AnsichtGB.Controls.Add(this.GsmKoLbl2);
             this.AnsichtGB.Controls.Add(this.GewinnLbl2);
@@ -312,7 +314,7 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             this.AnsichtGB.Controls.Add(this.RadioBtnVerlauf);
             this.AnsichtGB.Controls.Add(this.RadioBtnUebersicht);
             this.AnsichtGB.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.AnsichtGB.Location = new System.Drawing.Point(894, 132);
+            this.AnsichtGB.Location = new System.Drawing.Point(793, 97);
             this.AnsichtGB.Name = "AnsichtGB";
             this.AnsichtGB.Size = new System.Drawing.Size(254, 382);
             this.AnsichtGB.TabIndex = 36;
@@ -476,15 +478,13 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             this.RadioBtnUebersicht.UseVisualStyleBackColor = true;
             this.RadioBtnUebersicht.Click += new System.EventHandler(this.RadioBtnUebersicht_Click);
             // 
-            // Form1
+            // FormDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1291, 610);
+            this.ClientSize = new System.Drawing.Size(1051, 572);
             this.Controls.Add(this.AnsichtGB);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.TextVersionlbl);
-            this.Controls.Add(this.versionLbl);
             this.Controls.Add(this.AnzahlAktienLbl);
             this.Controls.Add(this.AnzahlAktienTb);
             this.Controls.Add(this.TitelCb);
@@ -505,7 +505,7 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             this.Controls.Add(this.DatumLbl);
             this.Controls.Add(this.DatumTb);
             this.Controls.Add(this.dgv);
-            this.Name = "Form1";
+            this.Name = "FormDashboard";
             this.Text = "Das beste Aktien Programm was es gibt!";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
@@ -540,8 +540,6 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
         private System.Windows.Forms.ComboBox TitelCb;
         private System.Windows.Forms.TextBox AnzahlAktienTb;
         private System.Windows.Forms.Label AnzahlAktienLbl;
-        private System.Windows.Forms.Label versionLbl;
-        private System.Windows.Forms.Label TextVersionlbl;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox AnsichtGB;
         private System.Windows.Forms.RadioButton RadioBtnVerlauf;
