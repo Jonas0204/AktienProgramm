@@ -6,3 +6,4 @@
 using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Interoperability", "CA1401:P/Invokes dürfen nicht sichtbar sein", Justification = "<Ausstehend>", Scope = "member", Target = "~M:Kosten__und_Nutzenanalyse_Aktienhandel.Forms.MainGUI.SendMessage(System.IntPtr,System.Int32,System.Int32,System.Int32)")]
+[assembly: SuppressMessage("Style", "IDE0044:Modifizierer \"readonly\" hinzufügen", Justification = "<Ausstehend>", Scope = "member", Target = "~F:Kosten__und_Nutzenanalyse_Aktienhandel.Forms.MainGUI.leftBorderBtn")]

@@ -36,7 +36,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::Kosten__und_Nutzenanalyse_Aktienhandel.Properties.Resources.JHIcon_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(278, 119);
+            this.pictureBox1.Location = new System.Drawing.Point(279, 85);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(244, 213);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

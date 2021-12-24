@@ -72,7 +72,7 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel.Forms
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(44, 47, 51);
+                currentBtn.BackColor = Color.FromArgb(30, 33, 35);
                 currentBtn.ForeColor = Color.DarkGray;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = Color.FromArgb(114, 137, 218);
@@ -157,6 +157,7 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel.Forms
         private void BtnSettings_Click(object sender, EventArgs e)
         {
             Btn_Press(sender, RGBColors.color3);
+            OpenChildForm(new FormSettings());
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
@@ -200,13 +201,18 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel.Forms
 
         private void BtnMinimise_Click(object sender, EventArgs e)
         {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void BtnMaximise_Click(object sender, EventArgs e)
+        {            
             if (WindowState == FormWindowState.Normal) WindowState = FormWindowState.Maximized;
             else WindowState = FormWindowState.Normal;
         }
 
-        private void BtnMaximise_Click(object sender, EventArgs e)
+        private void MainGUI_Resize(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Minimized;
+            
         }
     }
 }

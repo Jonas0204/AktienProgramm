@@ -14,7 +14,23 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
         public List<Aktie> Aktien;
         
         public static void SaveObj(List<Aktie> pAktien)
-        {               
+        {
+            string Savepath = Properties.Settings.Default.Speicherpfad + @"\Pool.csv";
+            if (Properties.Settings.Default.Speicherpfad == "")
+            {
+                FolderBrowserDialog fbd = new();                
+                fbd.SelectedPath = Convert.ToString(Application.StartupPath); // Environment.SpecialFolder.MyDocuments;
+                DialogResult result = fbd.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    Properties.Settings.Default.Speicherpfad = fbd.SelectedPath;
+                    Properties.Settings.Default.Save();
+                }
+                else
+                {
+                    return;
+                }
+            }            
             BinaryFormatter formatter = new();
             FileStream fs = new(Application.StartupPath + "Pool.csv", FileMode.Create, FileAccess.Write);
 

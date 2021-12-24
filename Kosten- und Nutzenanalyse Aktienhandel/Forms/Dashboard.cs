@@ -118,16 +118,17 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             DatumTb.Focus();
         }
 
-        private void SpeicherBtn_Click(object sender, EventArgs e)
+
+        private void EinfuegenBtn_Click(object sender, EventArgs e)
         {
             DatumTb.Text = DatumTb.Text.Replace(".", "/");
             string name = TitelCb.Text;
-            string datum = DateTime.ParseExact(DatumTb.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture).ToShortDateString();            
+            string datum = DateTime.ParseExact(DatumTb.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture).ToShortDateString();
             string Aktion = ""; if (KaufCb.Checked) Aktion = "Kauf"; if (VerkaufCb.Checked) Aktion = "Verkauf";
             double kosten = Convert.ToDouble(KostenTb.Text);
             double kurs = Convert.ToDouble(KursTb.Text);
             int nAktien = Convert.ToInt32(AnzahlAktienTb.Text);
-            
+
             Aktie aktie = new(name, datum, Aktion, kosten, kurs, nAktien);
             int MetaID;
             if (Pool.Aktien.Count > 0)
@@ -138,53 +139,33 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
                 //MessageBox.Show(Pool.Aktien[0].Kosten.ToString());
             }
             else MetaID = 1;
-            
 
-            aktie.MetaID = MetaID;            
 
-            Pool.Aktien.Add(aktie); 
-            if (Pool.Aktien.Count > 0) Pool.Aktien = Pool.SortByDate(Pool.Aktien);            
+            aktie.MetaID = MetaID;
+
+            Pool.Aktien.Add(aktie);
+            if (Pool.Aktien.Count > 0) Pool.Aktien = Pool.SortByDate(Pool.Aktien);
             AddToTabel(Pool.Aktien);
 
-            // ComboBox füllen
-            int i = TitelCb.FindStringExact(TitelLbl.Text);                         
+            // ComboBOx füllen
+            int i = TitelCb.FindStringExact(TitelLbl.Text);
             if (i == -1)
             {
                 TitelCb.Items.Add(TitelLbl.Text);
             }
-
-            //List<int> index = Pool.GetAllAktien(TitelLbl.Text);
         }
-                
+
         private void TabelleSpeichernBtn_Click(object sender, EventArgs e)
         {            
             Pool.SaveObj(Pool.Aktien);
-
-            /*
-            SFD.FileName = "Tabelle(Aktien)";
-            SFD.DefaultExt = "xml";
-            SFD.Filter = "XML-Datei (*.xml)|*.xml";
-            if (SFD.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                table.WriteXml(@SFD.FileName);
-            }*/
-            MessageBox.Show("Erfolgreich Gespeichert!");
+            MessageBox.Show("Gespeichert!");
         }
 
         private void TabelleÖffnenBtn_Click(object sender, EventArgs e)
         {
             table.Clear();
             Pool.Aktien = Pool.LoadObj();
-            AddToTabel(Pool.Aktien);
-            /*
-            table.Clear();
-            OFD.FileName = "Tabelle(Aktien)";
-            OFD.DefaultExt = "xml";
-            OFD.Filter = "XML-Datei (*.xml)|*.xml";
-            if (OFD.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                table.ReadXml(@OFD.FileName);
-            }*/
+            AddToTabel(Pool.Aktien);            
 
             lock (TitelCb.Items)
             {
@@ -210,8 +191,7 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
         }
 
         private void DelRowBtn_Click(object sender, EventArgs e)
-        {
-            int einträge = 0;
+        {            
             if (dgv.Rows.Count == 0)
             {
                 MessageBox.Show("Fügen sie bitte zuerst einen Eintrag hinzu!");
@@ -219,25 +199,7 @@ namespace Kosten__und_Nutzenanalyse_Aktienhandel
             else
             {
                 int row = dgv.CurrentCell.RowIndex;
-                string subname = dgv.Rows[row].Cells["Subtitel"].Value.ToString();
-                string titel = dgv.Rows[row].Cells["Titel"].Value.ToString();
-                foreach (DataGridViewRow row2 in dgv.Rows)
-                {
-                    if (dgv.Rows[row2.Index].Cells["Subtitel"].Value.ToString() == subname)
-                    {
-                        einträge += 1;
-                    }
-                }
-
-                if (einträge == 1)
-                {                    
-                    TitelCb.Items.Remove(titel);
-                    dgv.Rows.RemoveAt(row);
-                }
-                else
-                {
-                    dgv.Rows.RemoveAt(row);
-                }
+                dgv.Rows.RemoveAt(row);                
             }            
         }
 
